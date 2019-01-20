@@ -1,0 +1,41 @@
+There were some recent changes with the new MySQL database server v8. 
+
+Come back to this lecture after you watch the next video.
+
+--- Connecting to MySQL Database Server v8 with JDBC Driver, MySQL Connector/J v5.1.x
+
+Starting with MySQL Database Server v8, the MySQL database has changed the default authentication plugin for MySQL server from mysql_native_password to caching_sha2_password.
+
+As a result, you need to make minor changes to the security  configuration for your user account. Also, there were some recent  critical bug fixes in the 8.x JDBC driver, MySQL Connector/J.
+
+1. Download from this link:
+
+MySQL JDBC Driver, Connector/J v8
+
+https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.13.zip
+
+2. Unzip the download file and make note of the JAR file:  mysql-connector-java-8.x.y.jar
+
+3. Copy the .jar file to the WEB-INF/lib directory. (remove any previous versions)
+
+4. Log into the MySQL Workbench using your root account.
+
+5. Run the following SQL script
+
+alter user 'webstudent'@'localhost' identified with mysql_native_password by 'webstudent'; 
+
+6. Back in Eclipse, for the database connection, you need change the JDBC URL.
+
+File: context.xml
+
+Replace
+
+        url="jdbc:mysql://localhost:3306/web_student_tracker?useSSL=false"
+
+With
+
+        url="jdbc:mysql://localhost:3306/web_student_tracker?useSSL=false&amp;serverTimezone=UTC"
+
+Based on these changes, your app will be able to connect to MySQL 8.
+
+7. Test your application in Eclipse.
