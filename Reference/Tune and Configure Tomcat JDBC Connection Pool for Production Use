@@ -1,0 +1,19 @@
+A couple of students have asked about configuring the connection pool for Production use. 
+
+Here are three resources that can help you with this configuration:
+
+Configuring jdbc-pool for high-concurrency 
+
+- https://my.oschina.net/shipley/blog/519449
+
+--
+
+Tomcat JDBC Connection Pool configuration for production and development 
+
+- http://www.codingpedia.org/ama/tomcat-jdbc-connection-pool-configuration-for-production-and-development/
+
+--
+
+Optimal number of connections in connection pool 
+
+- http://stackoverflow.com/questions/1208077/optimal-number-of-connections-in-connection-pool
